@@ -3,38 +3,37 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class UserInterface {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public UserInterface() {
         scanner = new Scanner(System.in);
     }
 
     public void start() {
-        boolean running = true;
+        boolean run = true;
 
-        while (running) {
-            running = homeScreen();
+        while (run) {
+            run = homeScreen();
         }
 
-        System.out.println("Thank you for using the Sandwich Shop!");
+        System.out.println("Thank you for visiting DELi-cious Sub! Goodbye!");
     }
 
     private boolean homeScreen() {
-        System.out.println("\n=== Home Screen ===");
-        System.out.println("1) New Order");
-        System.out.println("0) Exit");
-        System.out.print("Select an option: ");
+        System.out.println("""
+                === Home Screen ===
+                1: New Order
+                0: Exit
+                Please Select an option:""");
 
         String choice = scanner.nextLine();
 
         switch (choice) {
-            case "1":
-                orderScreen();
-                break;
-            case "0":
+            case "1" -> orderScreen();
+            case "0" -> {
                 return false;
-            default:
-                System.out.println("Invalid selection. Please try again.");
+            }
+            default -> System.out.println("Invalid selection. Please try again.");
         }
         return true;
     }
@@ -43,47 +42,43 @@ public class UserInterface {
         boolean inOrder = true;
 
         while (inOrder) {
-            System.out.println("\n=== Order Screen ===");
-            System.out.println("1) Add Sandwich");
-            System.out.println("2) Add Drink");
-            System.out.println("3) Add Chips");
-            System.out.println("4) Checkout");
-            System.out.println("0) Cancel Order");
-            System.out.print("Select an option: ");
+            System.out.println("""
+                    === Order Screen ===
+                    1: Add Sandwich
+                    2: Add Drink
+                    3: Add Chips
+                    4: Checkout
+                    0: Cancel Order
+                    Please Select an option:""");
 
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "1":
-                    addSandwichScreen();
-                    break;
-                case "2":
-                    addDrinkScreen();
-                    break;
-                case "3":
-                    addChipsScreen();
-                    break;
-                case "4":
+                case "1" -> addSandwichScreen();
+                case "2" -> addDrinkScreen();
+                case "3" -> addChipsScreen();
+                case "4" -> {
                     checkoutScreen();
-                    inOrder = false; // after checkout, return home
-                    break;
-                case "0":
+                    inOrder = false;
+                }
+                case "0" -> {
                     System.out.println("Order canceled. Returning to Home Screen...");
                     inOrder = false;
-                    break;
-                default:
-                    System.out.println("Invalid selection. Please try again.");
+                }
+                default -> System.out.println("Invalid selection. Please try again.");
             }
         }
     }
 
     private void addSandwichScreen() {
         System.out.println("\n=== Add Sandwich ===");
-        System.out.println("Select your bread:");
+
+        System.out.println("Select sandwich size: (4\", 8\", 12\")");
+        // Placeholder for size selection
+
+        System.out.println("Select your bread: (white, wheat, rye, or wrap)");
         // Placeholder for bread selection logic
 
-        System.out.println("Select sandwich size:");
-        // Placeholder for size selection
 
         System.out.println("Select toppings:");
         System.out.println("  Meat:");
@@ -125,22 +120,20 @@ public class UserInterface {
         System.out.println("Order details (Placeholder)");
         System.out.println("Total price: (Placeholder)");
 
-        System.out.println("\n1) Confirm Order");
-        System.out.println("0) Cancel");
+        System.out.println("\n1: Confirm Order");
+        System.out.println("0: Cancel");
         System.out.print("Select an option: ");
 
         String choice = scanner.nextLine();
 
         switch (choice) {
-            case "1":
+            case "1" -> {
                 System.out.println("Receipt created! Returning to Home Screen...");
                 // Placeholder for receipt creation
-                break;
-            case "0":
-                System.out.println("Order canceled. Returning to Home Screen...");
-                break;
-            default:
-                System.out.println("Invalid selection. Returning to Home Screen...");
+            }
+            case "0" -> System.out.println("Order canceled. Returning to Home Screen...");
+            default -> System.out.println("Invalid selection. Returning to Home Screen...");
+
         }
     }
 }
