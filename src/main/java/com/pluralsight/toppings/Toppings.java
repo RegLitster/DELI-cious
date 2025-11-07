@@ -1,5 +1,8 @@
 package com.pluralsight.toppings;
 
+import com.pluralsight.OrderItem;
+
+
 public abstract class Toppings {
     protected String name;
     protected boolean isPremium;
@@ -22,5 +25,8 @@ public abstract class Toppings {
     public boolean isExtra() {
         return isExtra;
     }
-    public abstract double getPrice(int sandwichSize);
+
+    public  double getPrice(int sandwichSize) {
+        return 0;
+    }
 }
