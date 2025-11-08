@@ -38,7 +38,7 @@ public class Drink implements OrderItem {
             case "Pepsi" -> "Pepsi";
             case "Dr Pepper" -> "Dr Pepper";
             case "Starry" -> "Starry";
-            case "Diet Coke" -> "Diet Coke";
+            case "Diet Pepsi" -> "Diet Pepsi";
             default -> "Pepsi";
         };
     }
