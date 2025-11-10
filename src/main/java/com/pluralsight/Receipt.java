@@ -23,7 +23,7 @@ public class Receipt {
         System.out.println("\n=== RECEIPT ===");
         for (OrderItem item : items) {
             System.out.println(item.getName() + " - $" + String.format("%.2f", item.getPrice()));
-            if(item instanceof Sandwich ){
+            if(item instanceof Sandwich){
             System.out.println("\n" + item.getDescription());
         }}
         System.out.println("---------------------");

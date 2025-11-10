@@ -64,9 +64,9 @@ public class Sandwich implements OrderItem{
     public double getPrice() {
         int sandwichSize = getSize();
         double price = switch (size) {
-            case "4" -> 5.50;
-            case "8" -> 7.00;
-            case "12" -> 8.50;
+            case "4\"" -> 5.50;
+            case "8\"" -> 7.00;
+            case "12\"" -> 8.50;
             default -> 0.0;
         };
         double totalPrice = toppings.stream()

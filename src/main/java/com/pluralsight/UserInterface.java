@@ -86,7 +86,7 @@ public class UserInterface {
         System.out.println("Select your bread: (white, wheat, rye, or wrap)");
         String breadType = scan.nextLine().toLowerCase();
 
-        Sandwich sandwich = new Sandwich(size, breadType, false);
+        Sandwich sandwich = new Sandwich(size+"\"", breadType, false);
 
         System.out.println("Select toppings:");
         System.out.println("""
