@@ -81,7 +81,7 @@ public class Sandwich implements OrderItem{
                 .map(Toppings::getName)
                 .map(name -> "  -" + name)
                 .collect(Collectors.joining("\n"));
-        return "Bread: " + breadType + (isToasted ? " - Toasted" : "") + "\nToppings:\n" + toppingsDescription;
+        return "Bread: " + breadType + (isToasted ? " - Toasted" : "") + "\nToppings:\n" + toppingsDescription+"\n";
     }
 
 }

@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72d29b10-1475-46b7-9b6f-a0513a52b858" name="Changes" comment="made a sandwich, broke the sandwich. Have a loop bug I'll have to look at.">
+    <list default="true" id="72d29b10-1475-46b7-9b6f-a0513a52b858" name="Changes" comment="Fixed loop bug, moved where I create my sandwich so it stops duplicating.&#10;Added regular toppings and sauces to RegularToppings so the user cannot put things we do not have.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Receipt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Chips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Chips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Receipt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/Cheese.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/Meats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/Meats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/RegularToppings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/RegularToppings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,13 +115,22 @@
       <option name="project" value="LOCAL" />
       <updated>1762568647347</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed loop bug, moved where I create my sandwich so it stops duplicating.&#10;Added regular toppings and sauces to RegularToppings so the user cannot put things we do not have.">
+      <option name="closed" value="true" />
+      <created>1762793405256</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762793405256</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Added Toppings and fixed UI&#10;Need to have sandwich interact with toppings" />
     <MESSAGE value="made a sandwich, broke the sandwich. Have a loop bug I'll have to look at." />
-    <option name="LAST_COMMIT_MESSAGE" value="made a sandwich, broke the sandwich. Have a loop bug I'll have to look at." />
+    <MESSAGE value="Fixed loop bug, moved where I create my sandwich so it stops duplicating.&#10;Added regular toppings and sauces to RegularToppings so the user cannot put things we do not have." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed loop bug, moved where I create my sandwich so it stops duplicating.&#10;Added regular toppings and sauces to RegularToppings so the user cannot put things we do not have." />
   </component>
 </project>

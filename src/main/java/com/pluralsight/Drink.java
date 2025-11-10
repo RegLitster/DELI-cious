@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.util.List;
+
 public class Drink implements OrderItem {
     private String size;
     private final String flavor;
@@ -9,9 +11,27 @@ public class Drink implements OrderItem {
         this.flavor = flavor;
     }
 
+    private static final List<String> sizes = List.of("Small", "Medium", "Large");
+    private static final List<String> flavors = List.of("Pepsi", "Dr Pepper", "Starry", "Diet Pepsi");
+
+    public static boolean isValidSize(String size) {
+        return sizes.stream().anyMatch(s -> s.equalsIgnoreCase(size));
+    }
+
+    public static boolean isValidFlavor(String flavor) {
+        return flavors.stream().anyMatch(f -> f.equalsIgnoreCase(flavor));
+    }
+
+    public static String normalizeFlavor(String flavor) {
+        return flavors.stream()
+                .filter(f -> f.equalsIgnoreCase(flavor))
+                .findFirst()
+                .orElse("Pepsi");
+    }
+
     @Override
     public String getName() {
-        return "";
+        return "Drink: " + size + " " + flavor;
     }
 
     @Override
@@ -26,20 +46,6 @@ public class Drink implements OrderItem {
 
     @Override
     public String getDescription() {
-        return "";
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public String getFlavor() {
-        return switch (flavor) {
-            case "Pepsi" -> "Pepsi";
-            case "Dr Pepper" -> "Dr Pepper";
-            case "Starry" -> "Starry";
-            case "Diet Pepsi" -> "Diet Pepsi";
-            default -> "Pepsi";
-        };
+        return size + " " + flavor;
     }
 }

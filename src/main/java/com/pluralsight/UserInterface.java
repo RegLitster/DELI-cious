@@ -148,14 +148,14 @@ public class UserInterface {
             }
         }
         System.out.println("""
-            Sauces (type one at a time and type "done" when finished)
-            - mayo
-            - mustard
-            - ketchup
-            - ranch
-            - thousand islands
-            - vinaigrette
-            """);
+                Sauces (type one at a time and type "done" when finished)
+                - mayo
+                - mustard
+                - ketchup
+                - ranch
+                - thousand islands
+                - vinaigrette
+                """);
         while (true) {
             System.out.print("Sauce: ");
             String sauce = scan.nextLine().trim().toLowerCase();
@@ -168,49 +168,73 @@ public class UserInterface {
             }
         }
 
-    System.out.print("Would you like the sandwich toasted? (Y/N): ");
-    String toasted = scan.nextLine().toLowerCase();
-    switch (toasted) {
-        case "y" -> sandwich.setToasted(true);
-        case "n" -> sandwich.setToasted(false);
+        System.out.print("Would you like the sandwich toasted? (Y/N): ");
+        String toasted = scan.nextLine().toLowerCase();
+        switch (toasted) {
+            case "y" -> sandwich.setToasted(true);
+            case "n" -> sandwich.setToasted(false);
+        }
+        System.out.println("Sandwich added!");
+        System.out.println(sandwich.getDescription());
+        System.out.printf("Price: $%.2f%n", sandwich.getPrice());
+
+
+        return sandwich;
     }
-    System.out.println("Sandwich added!");
-    System.out.println(sandwich.getDescription());
-    System.out.printf("Price: $%.2f%n", sandwich.getPrice());
+
+    private Drink addDrinkScreen() {
+        System.out.println("\n=== Add Drink ===");
+
+        String size;
+        while (true) {
+            System.out.println("Select drink size (small, medium, large): ");
+            size = scan.nextLine().trim().toLowerCase();
+            if (Drink.isValidSize(size)) break;
+            System.out.println("Invalid size. Please select from small, medium, or large.");
+        }
+
+        String flavor;
+        while (true) {
+            System.out.println("Select drink flavor (Pepsi, Dr Pepper, Starry, Diet Pepsi): ");
+            flavor = scan.nextLine().trim();
+            if (Drink.isValidFlavor(flavor)) {
+                flavor = Drink.normalizeFlavor(flavor);
+                break;
+            }
+            System.out.println("Invalid flavor. Please select from the list above.");
+        }
+
+        Drink drink = new Drink(size, flavor);
+        System.out.printf("Added %s %s ($%.2f)\n", size, flavor, drink.getPrice());
+        return drink;
+    }
 
 
-    return sandwich;
-}
+    private Chips addChipsScreen() {
+        System.out.println("\n=== Add Chips ===");
 
-private Drink addDrinkScreen() {
-    System.out.println("\n=== Add Drink ===");
-    System.out.println("Select drink size (small, medium, large): ");
-    String drinkSize = scan.nextLine().toLowerCase();
+        String flavor;
+        while (true) {
+            System.out.println("Select chip flavor (Lays, Doritos, BBQ, Sour Cream): ");
+            flavor = scan.nextLine().trim();
+            if (Chips.isValidFlavor(flavor)) {
+                flavor = Chips.normalizeFlavor(flavor);
+                break;
+            }
+            System.out.println("Invalid flavor. Please select from the list above.");
+        }
 
-    System.out.println("Select drink flavor (Pepsi, Dr Pepper, Starry, Diet Pepsi): ");
-    String flavor = scan.nextLine();
-
-    Drink drink = new Drink(drinkSize, flavor);
-    System.out.printf("Added %s %s ($%.2f)\n", drinkSize, flavor, drink.getPrice());
-    return drink;
-}
+        Chips chips = new Chips(flavor);
+        System.out.printf("Added %s ($%.2f)\n", flavor, chips.getPrice());
+        return chips;
+    }
 
 
-private Chips addChipsScreen() {
-    System.out.println("\n=== Add Chips ===");
-    System.out.println("Select chip flavor (e.g., Lays, Doritos, BBQ, Sour Cream): ");
-    String flavor = scan.nextLine();
+    private void checkoutScreen() {
+        System.out.println("\n=== Checkout ===");
+        currentOrder.printReceipt();
 
-    Chips chips = new Chips();
-    System.out.printf("Added %s chips ($%.2f)\n", flavor, chips.getPrice());
-    return chips;
-}
-
-private void checkoutScreen() {
-    System.out.println("\n=== Checkout ===");
-    currentOrder.printReceipt();
-
-    System.out.println("""
+        System.out.println("""
                 1: Confirm Order
                 0: Cancel Order
                 Please Select an Option""");
@@ -218,7 +242,10 @@ private void checkoutScreen() {
         String choice = scan.nextLine();
 
         switch (choice) {
-            case "1" -> System.out.println("Receipt created! Returning to Home Screen...");
+            case "1" -> {
+                currentOrder.saveReceipt();
+                System.out.println("Receipt created! Returning to Home Screen...");
+            }
             case "0" -> System.out.println("Order canceled. Returning to Home Screen...");
             default -> System.out.println("Invalid selection. Returning to Home Screen...");
         }
