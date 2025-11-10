@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Order {
+public class Receipt {
     private final List<OrderItem> items = new ArrayList<>();
 
     public void addItem(OrderItem item) {
@@ -18,7 +18,7 @@ public class Order {
         System.out.println("\n=== RECEIPT ===");
         for (OrderItem item : items) {
             System.out.println(item.getName() + " - $" + String.format("%.2f", item.getPrice()));
-            System.out.println("  " + item.getDescription());
+            System.out.println("\n" + item.getDescription());
         }
         System.out.println("---------------------");
         System.out.printf("TOTAL: $%.2f%n", getTotal());

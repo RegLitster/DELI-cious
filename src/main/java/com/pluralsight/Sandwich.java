@@ -57,7 +57,7 @@ public class Sandwich implements OrderItem{
 
     @Override
     public String getName() {
-        return size + "Sandwich" + breadType;
+        return size + " Sandwich " + breadType;
     }
 
     @Override
@@ -79,8 +79,9 @@ public class Sandwich implements OrderItem{
     public String getDescription() {
         String toppingsDescription = toppings.stream()
                 .map(Toppings::getName)
-                .map(name -> " -" +name)
+                .map(name -> "  -" + name)
                 .collect(Collectors.joining("\n"));
-        return "Bread: " + breadType + (isToasted ? " - Toasted" : "") + "Toppings: " + toppingsDescription;
+        return "Bread: " + breadType + (isToasted ? " - Toasted" : "") + "\nToppings:\n" + toppingsDescription;
     }
+
 }

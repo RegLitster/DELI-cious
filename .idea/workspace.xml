@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72d29b10-1475-46b7-9b6f-a0513a52b858" name="Changes" comment="Added Toppings and fixed UI&#10;Need to have sandwich interact with toppings">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" afterDir="false" />
+    <list default="true" id="72d29b10-1475-46b7-9b6f-a0513a52b858" name="Changes" comment="made a sandwich, broke the sandwich. Have a loop bug I'll have to look at.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Receipt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/Cheese.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/Meats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/Meats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/RegularToppings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/toppings/RegularToppings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,12 +108,21 @@
       <option name="project" value="LOCAL" />
       <updated>1762534909146</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="made a sandwich, broke the sandwich. Have a loop bug I'll have to look at.">
+      <option name="closed" value="true" />
+      <created>1762568647347</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762568647347</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Added Toppings and fixed UI&#10;Need to have sandwich interact with toppings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Toppings and fixed UI&#10;Need to have sandwich interact with toppings" />
+    <MESSAGE value="made a sandwich, broke the sandwich. Have a loop bug I'll have to look at." />
+    <option name="LAST_COMMIT_MESSAGE" value="made a sandwich, broke the sandwich. Have a loop bug I'll have to look at." />
   </component>
 </project>

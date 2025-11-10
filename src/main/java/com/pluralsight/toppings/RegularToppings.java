@@ -1,7 +1,20 @@
 package com.pluralsight.toppings;
 
+import java.util.List;
+
 public class RegularToppings extends Toppings {
-    public RegularToppings(String name,boolean isExtra) {
+
+    private static final List<String> regularToppings = List.of(
+            "lettuce", "peppers", "onions", "tomatoes",
+            "jalapeños", "cucumbers", "pickles", "guacamole", "mushrooms"
+    );
+
+    private static final List<String> sauces = List.of(
+            "mayo", "mustard", "ketchup", "ranch",
+            "thousand islands", "vinaigrette"
+    );
+
+    public RegularToppings(String name, boolean isExtra) {
         super(name, false, isExtra);
     }
 
@@ -9,4 +22,18 @@ public class RegularToppings extends Toppings {
     public double getPrice(int sandwichSize) {
         return 0;
     }
+
+    public static boolean isValidVeggie(String name) {
+        return regularToppings.contains(name.toLowerCase());
+    }
+
+    public static boolean isValidSauce(String name) {
+        return sauces.contains(name.toLowerCase());
+    }
+
+    public static boolean isValidTopping(String name) {
+        String lower = name.toLowerCase();
+        return regularToppings.contains(lower) || sauces.contains(lower);
+    }
+
 }

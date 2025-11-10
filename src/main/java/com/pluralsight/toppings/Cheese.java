@@ -26,4 +26,8 @@ public class Cheese extends Toppings {
         }
         return price;
     }
+    @Override
+    public String getName() {
+        return isExtra ? name + " (Extra Cheese)" : name;
+    }
 }

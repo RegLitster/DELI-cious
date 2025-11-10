@@ -25,4 +25,8 @@ public class Meats extends Toppings {
         }
         return price;
     }
+    @Override
+    public String getName() {
+        return isExtra ? name + " (Extra Meat)" : name;
+    }
 }
