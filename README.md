@@ -16,7 +16,7 @@ We all know that user curiosity can be a pain. So I've added multiply checkers t
 
 ## Its Made to Be Added Onto
 Maybe sandwiches are getting boring, No Problem!
-- Just add a new class, maybe you also want to sale hotpockets.
+- Just add a new class, maybe you also want to sell hotpockets.
 - Implement the OrderItem, add every hotpocket you want to sell and you're ready to start selling.
 
 ## That's All, Folks!
