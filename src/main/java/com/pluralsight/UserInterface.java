@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import java.util.List;
 import java.util.Scanner;
 
 import com.pluralsight.toppings.*;
@@ -80,50 +79,72 @@ public class UserInterface {
     private Sandwich addSandwichScreen() {
         System.out.println("\n=== Add Sandwich ===");
 
-        System.out.println("Select sandwich size: (4\", 8\", 12\")");
-        String size = scan.nextLine();
+        String size;
+        while (true) {
+            System.out.print("Select sandwich size (4\", 8\", 12\"): ");
+            size = scan.nextLine().trim();
+            if (Sandwich.isValidSize(size)) break;
+            System.out.println("Invalid size. Please enter 4\", 8\", or 12\".");
+        }
 
-        System.out.println("Select your bread: (white, wheat, rye, or wrap)");
-        String breadType = scan.nextLine().toLowerCase();
+        String breadType;
+        while (true) {
+            System.out.print("\nSelect bread type (white, wheat, rye, wrap): ");
+            breadType = scan.nextLine().trim().toLowerCase();
+            if (Sandwich.isValidBread(breadType)) break;
+            System.out.println("Invalid bread type. Please enter white, wheat, rye, or wrap.");
+        }
 
         Sandwich sandwich = new Sandwich(size+"\"", breadType, false);
-
+        System.out.println();
         System.out.println("Select toppings:");
         System.out.println("""
-                Meats or type none:
+                ===Meats or type done for none===
                  - steak
                  - ham
                  - salami
                  - roast beef
                  - chicken
                  - bacon""");
-        String meat = scan.nextLine().trim().toLowerCase();
+        while (true) {
+            System.out.print("Meat: ");
+            String meat = scan.nextLine().trim().toLowerCase();
+            if (meat.equals("done"))
+                break;
 
-        if (!meat.equals("none")) {
-            System.out.print("Would you like extra? (Y/N): ");
-            String extra = scan.nextLine().trim().toLowerCase();
-            boolean isExtra = extra.equals("y");
-            sandwich.addToppings(new Meats(meat, isExtra));
-        } else {
-            System.out.println("No meat added.");
+            if (Meats.isValidMeat(meat)) {
+                System.out.print("Would you like extra? (Y/N): ");
+                String extra = scan.nextLine().trim().toLowerCase();
+                boolean isExtra = extra.equals("y");
+                sandwich.addToppings(new Meats(meat, isExtra));
+            } else {
+                System.out.println("Invalid meat. Please select from the list above or type Done.");
+            }
         }
-
+        System.out.println();
         System.out.println("""
-                Cheese or type none:
+                ===Cheese or type done for none===
                 - american
                 - provolone
                 - cheddar
                 - swiss""");
-        String cheese = scan.nextLine().trim().toLowerCase();
 
-        if (!cheese.equals("none")) {
-            System.out.print("Would you like extra? (Y/N): ");
-            boolean extraCheese = scan.nextLine().trim().equals("y");
-            sandwich.addToppings(new Cheese(cheese, extraCheese));
-        } else {
-            System.out.println("No cheese added.");
+        while (true) {
+            System.out.print("Cheese: ");
+            String cheese = scan.nextLine().trim().toLowerCase();
+            if (cheese.equals("done"))
+                break;
+
+            if (Cheese.isValidCheese(cheese)) {
+                System.out.print("Would you like extra? (Y/N): ");
+                String extra = scan.nextLine().trim().toLowerCase();
+                boolean isExtra = extra.equals("y");
+                sandwich.addToppings(new Cheese(cheese, isExtra));
+            } else {
+                System.out.println("Invalid cheese. Please select from the list above or type done.");
+            }
         }
-
+        System.out.println();
         System.out.println("""
                 Regular Toppings (type one at a time and type "done" when finished):
                 - lettuce
@@ -147,6 +168,7 @@ public class UserInterface {
                 System.out.println("Invalid topping. Please choose from the list above.");
             }
         }
+        System.out.println();
         System.out.println("""
                 Sauces (type one at a time and type "done" when finished)
                 - mayo

@@ -23,17 +23,12 @@ public class RegularToppings extends Toppings {
         return 0;
     }
 
-    public static boolean isValidVeggie(String name) {
-        return regularToppings.contains(name.toLowerCase());
-    }
-
     public static boolean isValidSauce(String name) {
         return sauces.contains(name.toLowerCase());
     }
 
     public static boolean isValidTopping(String name) {
-        String lower = name.toLowerCase();
-        return regularToppings.contains(lower) || sauces.contains(lower);
+        return regularToppings.contains(name.toLowerCase());
     }
 
 }

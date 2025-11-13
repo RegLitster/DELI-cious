@@ -14,8 +14,15 @@ public class Sandwich implements OrderItem{
 
     public Sandwich(String size, String breadType, boolean isToasted) {
         this.size = size;
-        this.breadType = breadType;
         this.isToasted = isToasted;
+        this.breadType = breadType;
+    }
+    public static boolean isValidSize(String size) {
+        return List.of("4", "4\"", "8", "8\"", "12", "12\"").contains(size);
+    }
+
+    public static boolean isValidBread(String bread) {
+        return List.of("white", "wheat", "rye", "wrap").contains(bread.toLowerCase());
     }
 
     public void addToppings(Toppings toppings) {

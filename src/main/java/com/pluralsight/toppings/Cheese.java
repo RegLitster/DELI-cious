@@ -1,9 +1,18 @@
 package com.pluralsight.toppings;
 
+import java.util.List;
+
 public class Cheese extends Toppings {
     public Cheese(String name, boolean isExtra) {
         super(name, true, isExtra);
 
+    }
+    private static final List<String> cheeses = List.of(
+            "american", "provolone", "cheddar", "swiss"
+    );
+
+    public static boolean isValidCheese(String name) {
+        return cheeses.contains(name.toLowerCase());
     }
 
     @Override

@@ -1,8 +1,19 @@
 package com.pluralsight.toppings;
 
+import java.util.List;
+
 public class Meats extends Toppings {
     public Meats(String name, boolean isExtra) {
         super(name, true, isExtra);
+    }
+
+    private static final List<String> meats = List.of(
+            "steak", "ham", "salami", "roast beef",
+            "chicken", "bacon"
+    );
+
+    public static boolean isValidMeat(String name) {
+        return meats.contains(name.toLowerCase());
     }
 
     @Override

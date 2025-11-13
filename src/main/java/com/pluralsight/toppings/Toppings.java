@@ -1,8 +1,5 @@
 package com.pluralsight.toppings;
 
-import com.pluralsight.OrderItem;
-
-
 public abstract class Toppings {
     protected String name;
     protected boolean isPremium;
