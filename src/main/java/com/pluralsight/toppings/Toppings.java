@@ -15,14 +15,6 @@ public abstract class Toppings {
         return name;
     }
 
-    public boolean isPremium() {
-        return isPremium;
-    }
-
-    public boolean isExtra() {
-        return isExtra;
-    }
-
     public  double getPrice(int sandwichSize) {
         return 0;
     }

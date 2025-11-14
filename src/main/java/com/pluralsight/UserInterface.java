@@ -95,7 +95,7 @@ public class UserInterface {
             System.out.println("Invalid bread type. Please enter white, wheat, rye, or wrap.");
         }
 
-        Sandwich sandwich = new Sandwich(size+"\"", breadType, false);
+        Sandwich sandwich = new Sandwich(size + "\"", breadType, false);
         System.out.println();
         System.out.println("Select toppings:");
         System.out.println("""

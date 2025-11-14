@@ -1,0 +1,23 @@
+=== RECEIPT ===
+8" Sandwich white - $7.00
+Bread: white - Toasted
+Toppings:
+  -steak
+  -cheddar
+  -lettuce
+  -pickles
+  -mayo
+  -mustard
+
+4" Sandwich wheat - $5.50
+Bread: wheat
+Toppings:
+  -ham (Extra Meat)
+  -swiss
+  -lettuce
+  -onions
+
+Drink: small Pepsi - $2.00
+Chips: Lays - $1.50
+---------------------
+TOTAL: $16.00

@@ -1,0 +1,13 @@
+=== RECEIPT ===
+8" Sandwich white - $7.00
+Bread: white
+Toppings:
+  -steak
+  -swiss
+  -lettuce
+  -mayo
+
+Drink: small Pepsi - $2.00
+Chips: Lays - $1.50
+---------------------
+TOTAL: $10.50

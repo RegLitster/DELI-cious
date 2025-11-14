@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Sandwich implements OrderItem{
+public class Sandwich implements OrderItem {
     protected String size; // 4", 8" , 12"
     protected String breadType; //white, wheat, rye, wrap
     protected boolean isToasted;
@@ -17,6 +17,7 @@ public class Sandwich implements OrderItem{
         this.isToasted = isToasted;
         this.breadType = breadType;
     }
+
     public static boolean isValidSize(String size) {
         return List.of("4", "4\"", "8", "8\"", "12", "12\"").contains(size);
     }
@@ -40,22 +41,6 @@ public class Sandwich implements OrderItem{
             case "12" -> 12;
             default -> 0;
         };
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public String getBreadType() {
-        return breadType;
-    }
-
-    public void setBreadType(String breadType) {
-        this.breadType = breadType;
-    }
-
-    public boolean isToasted() {
-        return isToasted;
     }
 
     public void setToasted(boolean toasted) {
@@ -88,7 +73,8 @@ public class Sandwich implements OrderItem{
                 .map(Toppings::getName)
                 .map(name -> "  -" + name)
                 .collect(Collectors.joining("\n"));
-        return "Bread: " + breadType + (isToasted ? " - Toasted" : "") + "\nToppings:\n" + toppingsDescription+"\n";
+
+        return "Bread: " + breadType + (isToasted ? " - Toasted" : "") + "\nToppings:\n" + toppingsDescription + "\n";
     }
 
 }

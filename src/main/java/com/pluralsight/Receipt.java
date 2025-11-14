@@ -23,9 +23,10 @@ public class Receipt {
         System.out.println("\n=== RECEIPT ===");
         for (OrderItem item : items) {
             System.out.println(item.getName() + " - $" + String.format("%.2f", item.getPrice()));
-            if(item instanceof Sandwich){
-            System.out.println("\n" + item.getDescription());
-        }}
+            if (item instanceof Sandwich) {
+                System.out.println("\n" + item.getDescription());
+            }
+        }
         System.out.println("---------------------");
         System.out.printf("TOTAL: $%.2f%n", getTotal());
     }
@@ -34,7 +35,7 @@ public class Receipt {
         String timestamp = java.time.LocalDateTime.now()
                 .format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/ReceiptFolder/"+timestamp+".txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/ReceiptFolder/" + timestamp + ".txt"))) {
             writer.write("=== RECEIPT ===\n");
             for (OrderItem item : items) {
                 writer.write(item.getName() + " - $" + String.format("%.2f", item.getPrice()) + "\n");
